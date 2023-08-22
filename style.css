@@ -1,25 +1,25 @@
-*{
+ *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     
-}
+} 
 
- body{
+  body{
 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     display: flex;
-    /* justify-content: center; */
+    justify-content: center;
     height: auto;
     width: auto;
     padding: 50px;
    
-   background: linear-gradient(40deg, rgba(148,211,220,1) 12%, rgba(16,193,230,1) 37%, rgba(98,92,232,1) 98%);
+   background: linear-gradient(40deg, rgba(148,211,220,1) 12%, rgba(16,193,230,1) 37%, rgba(98,92,232,1) 98%); 
 
  }
- .side-bar{
+  .side-bar{
    width: 30%;
    background-color:rgb(235, 230, 230,0.5);
    transition: background-image 0.3s ease;
@@ -27,7 +27,7 @@
    border-bottom-left-radius: 10px;
    padding: 10px;
    
- }
+ } 
  .container{
   display: flex;
   overflow: hidden;
@@ -38,7 +38,7 @@
   border-radius: 15px;
   padding: 10px;
   min-width:250px ; 
-   
+    
 
  }
  .img{
@@ -50,16 +50,16 @@
     position: relative;
     top: 20px;
     left: 20px;
-    object-fit: cover;
+    object-fit: cover; 
 
- }
+  }
 
 #search{
    padding: 20px;
    display: flex;
    align-items: center;
-   justify-content: space-between;
-   /* margin-bottom: 30px; */
+   justify-content: space-between; 
+    margin-bottom: 30px;
    flex-wrap: wrap;
    overflow: hidden;
    box-sizing: border-box;
@@ -232,7 +232,7 @@ nav .option button:active{
    text-transform: capitalize;
 }
 .highlights{
-   /* display: flex; */
+   display: flex;
    flex-wrap: wrap;
    gap: 20px;
    margin-top: 20px;
@@ -251,7 +251,7 @@ nav .option button:active{
    padding: 10px 20px;
    background-color: #fff;
    display: flex;
-   flex-direction: column;
+    flex-direction: column;
 }
 .card2 .content p:first-child{
    text-align: center;
@@ -263,4 +263,4 @@ nav .option button:active{
    margin-top: 20px;
    text-align: left;
 
-}
+}  
