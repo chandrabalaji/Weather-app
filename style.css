@@ -1,34 +1,35 @@
- *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    
-} 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  body{
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  height: auto;
+  width: auto;
+  padding: 50px;
 
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    height: auto;
-    width: auto;
-    padding: 50px;
-   
-   background: linear-gradient(40deg, rgba(148,211,220,1) 12%, rgba(16,193,230,1) 37%, rgba(98,92,232,1) 98%); 
-
- }
-  .side-bar{
-   width: 30%;
-   background-color:rgb(235, 230, 230,0.5);
-   transition: background-image 0.3s ease;
-   border-top-left-radius: 10px;
-   border-bottom-left-radius: 10px;
-   padding: 10px;
-   
- } 
- .container{
+  background: linear-gradient(
+    40deg,
+    rgba(148, 211, 220, 1) 12%,
+    rgba(16, 193, 230, 1) 37%,
+    rgba(98, 92, 232, 1) 98%
+  );
+}
+.side-bar {
+  width: 30%;
+  background-color: rgb(235, 230, 230, 0.5);
+  transition: background-image 0.3s ease;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding: 10px;
+}
+.container {
   display: flex;
   overflow: hidden;
   width: 1200px;
@@ -37,230 +38,222 @@
   margin-top: 5px;
   border-radius: 15px;
   padding: 10px;
-  min-width:250px ; 
-    
-
- }
- .img{
-   background-image: url(images/thunderstorm-1265161_640.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 70%;
-    height: 30vh;
-    position: relative;
-    top: 20px;
-    left: 20px;
-    object-fit: cover; 
-
-  }
-
-#search{
-   padding: 20px;
-   display: flex;
-   align-items: center;
-   justify-content: space-between; 
-    margin-bottom: 30px;
-   flex-wrap: wrap;
-   overflow: hidden;
-   box-sizing: border-box;
-   width: auto;
-   height: auto;
-  
+  min-width: 250px;
 }
-#search input{
-   padding: 5px;
-   border-top-left-radius: 5px;
-   border-bottom-left-radius: 5px;
-   border: none;
-   outline: none;
-   font-size: medium;
-   width: 85%;
-   height: 40px;
-   
+.img {
+  background-image: url(images/thunderstorm-1265161_640.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 70%;
+  height: 30vh;
+  position: relative;
+  top: 20px;
+  left: 20px;
+  object-fit: cover;
 }
-.search input:focus{
-   outline: none;
-   border: 1px solid lightskyblue;
+
+#search {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: auto;
+  height: auto;
 }
- #search button{
-   width: 15%;
-   height: 40px;
-   border: none;
-   padding: 5px;
-   font-size: 20px;
-   background-color: rgba(54, 75, 234, 0.5);
-   border-top-right-radius: 5px;
-   border-bottom-right-radius: 5px;
-   cursor: pointer;
-   color: white;
+#search input {
+  padding: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border: none;
+  outline: none;
+  font-size: medium;
+  width: 85%;
+  height: 40px;
+}
+.search input:focus {
+  outline: none;
+  border: 1px solid lightskyblue;
+}
+#search button {
+  width: 15%;
+  height: 40px;
+  border: none;
+  padding: 5px;
+  font-size: 20px;
+  background-color: rgba(54, 75, 234, 0.5);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  cursor: pointer;
+  color: white;
 }
 .temprature {
-    display: flex;
-   position: relative;
-   bottom: 50px;
-
-
+  display: flex;
+  position: relative;
+  bottom: 50px;
 }
-.temprature #temp{
-   font-size: 70px;
-   font-weight: 100;
-   line-height: 1;
-
+.temprature #temp {
+  font-size: 70px;
+  font-weight: 100;
+  line-height: 1;
 }
-.temprature span{
-   font-size: 30px;
-   margin-left: 10px;
-   display: block;
+.temprature span {
+  font-size: 30px;
+  margin-left: 10px;
+  display: block;
 }
 
-.date-time{
-   position: relative;
-   bottom: 50px;
-   font-size: 30px;
-
+.date-time {
+  position: relative;
+  bottom: 50px;
+  font-size: 30px;
 }
-.divide{
-   width: 100%;
-   height: 1px;
-   margin: 0 2px;
-   background-color:  black;
+.divide {
+  width: 100%;
+  height: 1px;
+  margin: 0 2px;
+  background-color: black;
   position: relative;
   bottom: 20px;
-
 }
 
-.condition{
-   display: flex;
-   gap: 10px;
-   font-size: 20px;
+.condition {
+  display: flex;
+  gap: 10px;
+  font-size: 20px;
 }
-.location span{
-   
-   font-size: 20px;
+.location span {
+  font-size: 20px;
 }
-.location{
-   display: flex;
-    gap: 10px;
-    margin-top: 50px;
-
+.location {
+  display: flex;
+  gap: 10px;
+  margin-top: 50px;
 }
 .location p {
-   font-size: 20px;
+  font-size: 20px;
 }
-.main{
-   width: 100%;
-   min-width: 400px;
-   padding: 20px 40px;
-   position: relative;
-   padding-bottom: 90px;
-   background-color: rgb(251, 251, 251,.99);
-   
-   
-   
-   
+.main {
+  width: 100%;
+  min-width: 400px;
+  padding: 20px 40px;
+  position: relative;
+  padding-bottom: 90px;
+  background-color: rgb(251, 251, 251, 0.99);
 }
 
-.main nav{
-   display: flex;
-   width: 100%;
-   
-   
+.main nav {
+  display: flex;
+  width: 100%;
 }
-.option{
-   flex: 3;
-   
+.option {
+  flex: 3;
 }
-nav button{
-   background: transparent;
-   border: none;
-   margin-right: 10px;
-   font-size: 20px;
-   font-weight: 100;
-   text-transform: capitalize;
-   cursor: pointer;
+nav button {
+  background: transparent;
+  border: none;
+  margin-right: 10px;
+  font-size: 20px;
+  font-weight: 100;
+  text-transform: capitalize;
+  cursor: pointer;
 }
-nav .option button:active{
-   color: blue;
+nav .option button:active {
+  color: blue;
 }
-.unit button{
- color:black;
- background-color: #fff;
- border-radius: 50%;
- width: 40px;
- height: 40px;
+.unit button {
+  color: black;
+  background-color: #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
 }
 
-.unit button:active{
-   color: white;
-   background-color: black;
+.unit button:active {
+  color: white;
+  background-color: black;
 }
 
-.icon{
-    display: flex;
-    justify-content: center;
-    background-size: contain;
-   
+.icon {
+  display: flex;
+  justify-content: center;
+  background-size: contain;
 }
-.main .cards{
-   display: flex;
-   flex-wrap: wrap;
-   gap: 20px;
-   margin-top: 10px;
+.main .cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 10px;
 }
-.main .card{
-   width: 100px;
-   height: auto;
-   border-radius: 20px;
-   background-color:#fff;
-   border-radius: 10px;
-   text-align: center;
-   padding: 10px;
-   display: flex;
-   flex-direction: column;
+.main .card {
+  width: 100px;
+  height: auto;
+  border-radius: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
 }
-.card .icon{
-   width: 70%;
-   margin:  0 auto;
+.card .icon {
+  width: 70%;
+  margin: 0 auto;
 }
-.card .day-temp{
- font-size: 12px;
- display: flex;
- align-items: center;
- justify-content: center;
+.card .day-temp {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.today{
-   text-transform: capitalize;
+.today {
+  text-transform: capitalize;
 }
-.highlights{
-   display: flex;
-   flex-wrap: wrap;
-   gap: 20px;
-   margin-top: 20px;
+.highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
 }
-.card2 .heading{
-   width: 100%;
-   font-size: 20px;
-   font-weight: 600;
-   color: #c2c2c2;
-   margin-bottom: 20px;
+.card2 .heading {
+  width: 100%;
+  font-size: 20px;
+  font-weight: 600;
+  color: #c2c2c2;
+  margin-bottom: 20px;
 }
 
-.highlights .card2{
-   width: 220px;
-   height: 120px;
-   padding: 10px 20px;
-   background-color: #fff;
-   display: flex;
-    flex-direction: column;
+.highlights .card2 {
+  width: 220px;
+  height: 120px;
+  padding: 10px 20px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
 }
-.card2 .content p:first-child{
-   text-align: center;
+.card2 .content p:first-child {
+  text-align: center;
   font-size: 30px;
-
 }
-.card2 .content p:last-child{
-   font-size: 12px;
-   margin-top: 20px;
-   text-align: left;
-
-}  
+.card2 .content p:last-child {
+  font-size: 12px;
+  margin-top: 20px;
+  text-align: left;
+}
+#sunset {
+  position: relative;
+  left: 42px;
+  bottom: 20px;
+  font-size: 30px;
+}
+#Sunrise1 {
+  text-decoration: none;
+  outline: none;
+  background-color: transparent;
+  border: none;
+  color: #c2c2c2;
+  font-size: 20px;
+}
