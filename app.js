@@ -26,6 +26,7 @@ let airstatus = document.querySelector(".air-quality-status");
 
 let sunsettime = document.getElementById("Sunsetbtn");
 let sunrisetime = document.getElementById("Sunrise");
+let geolocation = document.querySelector(".location-btn");
 let hour = "week";
 
 //date & time
@@ -84,6 +85,8 @@ btn.addEventListener("click", () => {
   value();
 });
 
+// set all highlights in weather information 
+
 const getweather = (name, lon, lat) => {
   //  const weather_api = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${lat}&lon=${lon}&cnt={7}&appid=${API}`;
   const weather_api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API}`;
@@ -110,8 +113,9 @@ function value(data) {
   console.log(out);
   return out[0];
 }
-// value()
 
+
+// sunrise
 function dailysunrise(val1) {
   let sunrise = new Date(val1 * 1000);
 
@@ -126,7 +130,7 @@ function dailysunrise(val1) {
   });
   return rise;
 }
-
+// sunset
 function dailysunset(val) {
   let sunset = new Date(val * 1000);
   let hr = sunset.getHours();
@@ -141,3 +145,28 @@ function dailysunset(val) {
     document.querySelector("#sunset").innerText = set + "pm";
   });
 }
+/// get current location  from user
+function userlocation() {
+  navigator.geolocation.getCurrentPosition(
+    (position) => {
+      console.log(position);
+      const { latitude, longitude } = position.coords;
+      const geo_location = `http://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=1&appid=${API} `;
+      fetch(geo_location)
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          const {lat,lon, name } = data[0];
+          getweather(name,lon,lat);
+          locat.innerText = name
+        })
+        .catch(() => {
+          alert("curretn location request denied");
+        });
+    },
+    (error) => {
+      console.log(error);
+    }
+  );
+}
+geolocation.addEventListener("click", userlocation);
