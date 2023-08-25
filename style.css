@@ -248,12 +248,24 @@ nav .option button:active {
   left: 42px;
   bottom: 20px;
   font-size: 30px;
+  
 }
-#Sunrise1 {
+#Sunrise,#Sunsetbtn {
   text-decoration: none;
   outline: none;
   background-color: transparent;
   border: none;
   color: #c2c2c2;
   font-size: 20px;
+  cursor: pointer;
+  transition:  1s;
+  transition-property: transform;
+  transition-timing-function: linear;
+  
+}
+#Sunrise:hover,#Sunsetbtn:hover{
+  
+   color: rgb(71, 71, 211);
+   transform: scale(1.1);
+   
 }

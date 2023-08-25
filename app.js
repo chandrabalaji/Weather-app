@@ -13,7 +13,7 @@ let windspeed = document.querySelector(".wind-speed");
 let windstatus = document.querySelector(".wind-status");
 
 let sunrise = document.querySelector(".Sunrise");
-// let sunset = document.querySelector('#sunset')
+let sunset = document.querySelector("#sunset");
 
 let humidity = document.querySelector(".humidity");
 let humiditystatus = document.querySelector(".humidity-status");
@@ -24,7 +24,8 @@ let visibilityst = document.querySelector(".Visibility-status");
 let air = document.querySelector(".air-quality");
 let airstatus = document.querySelector(".air-quality-status");
 
-let morning = document.getElementById("Sunrise1");
+let sunsettime = document.getElementById("Sunsetbtn");
+let sunrisetime = document.getElementById("Sunrise");
 let hour = "week";
 
 //date & time
@@ -98,7 +99,7 @@ const getweather = (name, lon, lat) => {
       visibility.innerText = value(data.visibility) + "Km";
       pressure.innerText = data.main.pressure + "mb";
 
-      sunrise.innerHTML = dailysunrise(data.sys.sunrise) + "AM";
+      sunrise.innerHTML = dailysunrise(data.sys.sunrise) + "am";
       dailysunset(data.sys.sunset);
     })
     .catch((err) => err);
@@ -119,7 +120,10 @@ function dailysunrise(val1) {
   let rise = `${hr}:${min}`;
 
   // console.log(rise,set)
-
+  sunrisetime.addEventListener("click", () => {
+    sunset.innerHTML = "";
+    document.querySelector(".Sunrise").innerHTML = rise + "am";
+  });
   return rise;
 }
 
@@ -132,7 +136,7 @@ function dailysunset(val) {
   let min = sunset.getMinutes();
   let set = `${hr}:${min}`;
 
-  morning.addEventListener("click", () => {
+  sunsettime.addEventListener("click", () => {
     sunrise.innerHTML = "";
     document.querySelector("#sunset").innerText = set + "pm";
   });
