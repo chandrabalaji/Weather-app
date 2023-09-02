@@ -244,13 +244,7 @@ nav .option button:active {
   margin-top: 20px;
   text-align: left;
 }
-#sunset {
-  position: relative;
-  left: 42px;
-  bottom: 20px;
-  font-size: 30px;
-  
-}
+
 #Sunrise,#Sunsetbtn {
   text-decoration: none;
   outline: none;
@@ -269,4 +263,22 @@ nav .option button:active {
    color: rgb(71, 71, 211);
    transform: scale(1.1);
    
+}
+
+/* weathes-icon */
+
+.pressure-img img{
+  position: relative;
+  bottom:  20px;
+ 
+}
+.wind-status img{
+  position: relative;
+  bottom: 20px;
+  min-width: 10px;
+  min-height: 10px;
+}
+#sunset {
+  position: relative;
+  bottom: 20px; 
 }

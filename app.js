@@ -5,9 +5,10 @@ let btn = document.getElementById("btn");
 let condition = document.querySelector(".condition");
 let locat = document.querySelector(".location");
 let icon = document.querySelector(".icon");
-
+let dailydays = document.querySelector(".day");
+let dailytemps = document.querySelector(".temps");
 let pressure = document.querySelector(".pressure");
-let UV_index = document.querySelector(".uv-index");
+let pressureimg = document.querySelector(".pressure-img");
 
 let windspeed = document.querySelector(".wind-speed");
 let windstatus = document.querySelector(".wind-status");
@@ -21,8 +22,7 @@ let humiditystatus = document.querySelector(".humidity-status");
 let visibility = document.querySelector(".Visibility");
 let visibilityst = document.querySelector(".Visibility-status");
 
-let air = document.querySelector(".air-quality");
-let airstatus = document.querySelector(".air-quality-status");
+let feellike = document.querySelector(".feels-like");
 
 let sunsettime = document.getElementById("Sunsetbtn");
 let sunrisetime = document.getElementById("Sunrise");
@@ -57,6 +57,7 @@ function getdatetime() {
   }
 
   let daystring = days[now.getDay()];
+
   return `${daystring},${hour}:${minute}`;
 }
 setInterval(() => {
@@ -85,7 +86,7 @@ btn.addEventListener("click", () => {
   value();
 });
 
-// set all highlights in weather information 
+// set all highlights in weather information
 
 const getweather = (name, lon, lat) => {
   //  const weather_api = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${lat}&lon=${lon}&cnt={7}&appid=${API}`;
@@ -96,24 +97,25 @@ const getweather = (name, lon, lat) => {
       console.log(data);
       // weather(data)
       temp.innerText = `${(data.main.temp - 273.15).toFixed(0)}`;
+      dailytemps.innerHTML = `${(data.main.temp - 273.15).toFixed(0)}`;
       condition.innerText = data.weather[0].main;
       windspeed.innerText = data.wind.speed + "k/h";
       humidity.innerText = data.main.humidity + "%";
       visibility.innerText = value(data.visibility) + "Km";
       pressure.innerText = data.main.pressure + "mb";
-
+      feellike.innerHTML = (data.main.feels_like - 273.15).toFixed(0) + "º";
       sunrise.innerHTML = dailysunrise(data.sys.sunrise) + "am";
       dailysunset(data.sys.sunset);
+      daily();
+      
     })
     .catch((err) => err);
 };
 
 function value(data) {
   let out = data.toString().split("");
-  console.log(out);
   return out[0];
 }
-
 
 // sunrise
 function dailysunrise(val1) {
@@ -156,9 +158,9 @@ function userlocation() {
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
-          const {lat,lon, name } = data[0];
-          getweather(name,lon,lat);
-          locat.innerText = name
+          const { lat, lon, name } = data[0];
+          getweather(name, lon, lat);
+          locat.innerText = name;
         })
         .catch(() => {
           alert("curretn location request denied");
@@ -170,3 +172,19 @@ function userlocation() {
   );
 }
 geolocation.addEventListener("click", userlocation);
+
+function daily() {
+  let day = new Date().getDay();
+  let days = [
+    "sunday",
+    "monday",
+    "tuesday",
+    "wednesday",
+    "thersday",
+    "friday",
+    "saturday",
+  ];
+
+  dailydays.innerHTML = days[day];
+}
+
