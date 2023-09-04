@@ -9,6 +9,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   display: flex;
+
   justify-content: center;
   height: auto;
   width: auto;
@@ -22,18 +23,23 @@ body {
   );
 }
 .side-bar {
-  width: 30%;
+  min-width: 30%;
+  max-width: 100vw;
   background-color: rgb(235, 230, 230, 0.5);
   transition: background-image 0.3s ease;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   padding: 10px;
+  grid-column: 1;
 }
 .container {
   display: flex;
   overflow: hidden;
-  width: 1200px;
-  min-width: 900px;
+
+  max-width: 100vw;
+
+  max-width: 1200px;
+  /* min-width: 900px; */
   border-radius: 20px;
   margin-top: 5px;
   border-radius: 15px;
@@ -51,6 +57,7 @@ body {
   left: 20px;
   object-fit: cover;
 }
+
 
 #search {
   padding: 20px;
@@ -245,7 +252,8 @@ nav .option button:active {
   text-align: left;
 }
 
-#Sunrise,#Sunsetbtn {
+#Sunrise,
+#Sunsetbtn {
   text-decoration: none;
   outline: none;
   background-color: transparent;
@@ -253,26 +261,23 @@ nav .option button:active {
   color: #c2c2c2;
   font-size: 20px;
   cursor: pointer;
-  transition:  1s;
+  transition: 1s;
   transition-property: transform;
   transition-timing-function: linear;
-  
 }
-#Sunrise:hover,#Sunsetbtn:hover{
-  
-   color: rgb(71, 71, 211);
-   transform: scale(1.1);
-   
+#Sunrise:hover,
+#Sunsetbtn:hover {
+  color: rgb(71, 71, 211);
+  transform: scale(1.1);
 }
 
 /* weathes-icon */
 
-.pressure-img img{
+.pressure-img img {
   position: relative;
-  bottom:  20px;
- 
+  bottom: 20px;
 }
-.wind-status img{
+.wind-status img {
   position: relative;
   bottom: 20px;
   min-width: 10px;
@@ -280,5 +285,40 @@ nav .option button:active {
 }
 #sunset {
   position: relative;
-  bottom: 20px; 
+  bottom: 20px;
+}
+
+@media (max-width:714px) {
+  .container {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(auto-fit, minmax(100% 1fr));
+  }
+  .side-bar{
+    width: 100%;
+    
+    display: grid;
+    justify-content: stretch;
+    height: 450px;
+  }
+  .img{
+    display: none;
+  }
+  .img-714{
+     
+     position: absolute;
+     left: 320px;
+     top: 180px;
+     width: 22%;
+     height: 19vh;
+    
+    
+    
+  }
+  
+}
+@media (min-width:715px){
+  .img-714{
+    display: none;
+  }
 }

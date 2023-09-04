@@ -2,25 +2,25 @@ const temp = document.getElementById("temp");
 let date = document.getElementById("date-time");
 const cityinput = document.getElementById("city");
 let btn = document.getElementById("btn");
-let condition = document.querySelector(".condition");
-let locat = document.querySelector(".location");
+let condition = document.querySelector("#condition");
+let locat = document.querySelector("#crt-location");
 let icon = document.querySelector(".icon");
 let dailydays = document.querySelector(".day");
 let dailytemps = document.querySelector(".temps");
 let pressure = document.querySelector(".pressure");
-let pressureimg = document.querySelector(".pressure-img");
+// let pressureimg = document.querySelector(".pressure-img");
 
 let windspeed = document.querySelector(".wind-speed");
-let windstatus = document.querySelector(".wind-status");
+// let windstatus = document.querySelector(".wind-status");
 
 let sunrise = document.querySelector(".Sunrise");
 let sunset = document.querySelector("#sunset");
 
 let humidity = document.querySelector(".humidity");
-let humiditystatus = document.querySelector(".humidity-status");
+// let humiditystatus = document.querySelector(".humidity-status");
 
 let visibility = document.querySelector(".Visibility");
-let visibilityst = document.querySelector(".Visibility-status");
+// let visibilityst = document.querySelector(".Visibility-status");
 
 let feellike = document.querySelector(".feels-like");
 
@@ -53,7 +53,7 @@ function getdatetime() {
     hour = "0" + hour;
   }
   if (minute < 10) {
-    minute = "0" + hour;
+    minute = "0" + minute;
   }
 
   let daystring = days[now.getDay()];
@@ -107,7 +107,6 @@ const getweather = (name, lon, lat) => {
       sunrise.innerHTML = dailysunrise(data.sys.sunrise) + "am";
       dailysunset(data.sys.sunset);
       daily();
-      
     })
     .catch((err) => err);
 };
@@ -127,7 +126,6 @@ function dailysunrise(val1) {
 
   // console.log(rise,set)
   sunrisetime.addEventListener("click", () => {
-    sunset.innerHTML = "";
     document.querySelector(".Sunrise").innerHTML = rise + "am";
   });
   return rise;
@@ -143,10 +141,10 @@ function dailysunset(val) {
   let set = `${hr}:${min}`;
 
   sunsettime.addEventListener("click", () => {
-    sunrise.innerHTML = "";
-    document.querySelector("#sunset").innerText = set + "pm";
+    sunrise.innerHTML = set + "pm";
   });
 }
+
 /// get current location  from user
 function userlocation() {
   navigator.geolocation.getCurrentPosition(
@@ -187,4 +185,3 @@ function daily() {
 
   dailydays.innerHTML = days[day];
 }
-
