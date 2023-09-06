@@ -8,8 +8,7 @@ let icon = document.querySelector(".icon");
 let dailydays = document.querySelector(".day");
 let dailytemps = document.querySelector(".temps");
 let pressure = document.querySelector(".pressure");
-// let pressureimg = document.querySelector(".pressure-img");
-
+let morning = document.querySelector(".good");
 let windspeed = document.querySelector(".wind-speed");
 // let windstatus = document.querySelector(".wind-status");
 
@@ -33,7 +32,7 @@ let hour = "week";
 
 function getdatetime() {
   let now = new Date(),
-    hour = now.getHours();
+  hour = now.getHours();
   minute = now.getMinutes();
 
   let days = [
@@ -64,6 +63,24 @@ setInterval(() => {
   date.innerText = getdatetime();
 }, 500);
 
+const wish = ()=> {
+  let val;
+ let hour = new Date().getHours()
+ console.log(hour)
+ if(hour < 12){
+    val = 'good morning'
+  }
+  else if(hour >= 12 && hour <= 18 ){
+    val = 'good evening'
+  }
+  else {
+    val = 'wonderfull night'
+  }
+
+ morning.innerHTML = val
+ 
+} 
+wish()
 const API = "e581e5209be8f71d5ecf50eb1accb345";
 const cityname = () => {
   const city = cityinput.value;
@@ -82,8 +99,10 @@ const cityname = () => {
 };
 
 btn.addEventListener("click", () => {
-  cityname(), dailysunrise();
+  cityname(), 
+  dailysunrise();
   value();
+  
 });
 
 // set all highlights in weather information
